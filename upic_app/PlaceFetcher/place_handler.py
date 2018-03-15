@@ -14,7 +14,7 @@ class PlaceHandler(object):
         """
         list_query_string = query_string.split(' ')
         new_query_string = "+".join(list_query_string)
-        url = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=%s&key=AIzaSyAjfO3M8f9LSukw54OBUv4W3eGnTVKa1VE' % (new_query_string)
+        url = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=%s&key=%s' % (new_query_string, google_key)
         request = urllib2.Request(url)
         response = urllib2.urlopen(request)
         result = json.load(response)
